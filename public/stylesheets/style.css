@@ -2,7 +2,7 @@ body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   text-align:center;
-  background-color:#528491;
+  background-color:#2e7420;
 }
 
 .form-header{
@@ -10,6 +10,15 @@ body {
   margin:10px;
 }
 
+h2{
+  font-size:2em;
+  text-shadow:
+    -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+5px 5px 0 #fff,
+    1px 1px 0 #fff;
+}
 img{
   max-width:200px; 
 }
