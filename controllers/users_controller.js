@@ -39,7 +39,7 @@ exports.login = function(req, res){
         console.log(user);
         req.session.user = user.id;
         req.session.username = user.username;
-        req.session.msg = "<img src=\"" + user.pic + "\">;
+        req.session.msg = "<img src=\"" + user.pic + "\">";
         req.session.color = user.color;
         res.redirect('/');
       });
