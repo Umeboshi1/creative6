@@ -10,6 +10,10 @@ body {
   margin:10px;
 }
 
+img{
+  max-width:200px; 
+}
+
 input{
   margin:5px;
 }
