@@ -22,7 +22,7 @@ exports.signup = function(req, res){
     } else {
       req.session.user = user.id;
       req.session.username = user.username;
-      req.session.msg = 'Authenticated as ' + user.username;
+      req.session.msg = user.pic;
       res.redirect('/');
     }
   });
