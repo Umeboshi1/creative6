@@ -11,8 +11,8 @@ exports.signup = function(req, res){
   console.log("after new user exports.signup");
   user.set('hashed_password', hashPW(req.body.password));
   console.log("after hashing user exports.signup");
-  user.set('email', req.body.email);
-  console.log("after email user exports.signup");
+  user.set('pic', req.body.pic);
+  console.log("after pic user exports.signup");
   user.save(function(err) {
     console.log("In exports.signup");
     console.log(err);
@@ -39,7 +39,7 @@ exports.login = function(req, res){
         console.log(user);
         req.session.user = user.id;
         req.session.username = user.username;
-        req.session.msg = 'Authenticated as ' + user.username;
+        req.session.msg = "<img src=\"" + user.pic + "\">;
         req.session.color = user.color;
         res.redirect('/');
       });
@@ -67,7 +67,7 @@ exports.getUserProfile = function(req, res) {
 exports.updateUser = function(req, res){
   User.findOne({ _id: req.session.user })
   .exec(function(err, user) {
-    user.set('email', req.body.email);
+    user.set('pic', req.body.pic);
     user.set('color', req.body.color);
     user.save(function(err) {
       if (err){
